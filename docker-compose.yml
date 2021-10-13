@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  serve_rest_api:
+    image: paulogoncalvesbh/serverest:latest
+    container_name: serve_rest_api
+    ports:
+      - "3130:3000"
+
+  newman:
+    image: postman/newman
+    container_name: newman
+    env_file:
+      - .env
+    command: run "https://api.getpostman.com/collections/${COLLECTION_UUID}?apikey=${API_KEY}" --environment "https://api.getpostman.com/environments/${DEV_ENV_UUID}?apikey=${API_KEY}"
+    ports:
+      - "3131:3130"
+    depends_on:
+      - serve_rest_api
