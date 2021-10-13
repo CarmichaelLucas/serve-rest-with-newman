@@ -1,0 +1,23 @@
+{
+  "name": "serve_rest_with_postman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarmichaelLucas/serve-rest-with-newman.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarmichaelLucas/serve-rest-with-newman/issues"
+  },
+  "homepage": "https://github.com/CarmichaelLucas/serve-rest-with-newman#readme",
+  "dependencies": {
+    "newman": "^5.3.0"
+  }
+}
