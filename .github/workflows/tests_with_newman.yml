@@ -10,9 +10,9 @@ jobs:
         uses: actions/checkout@v2
     
       - name: Setup NodeJs
-        uses: actions/setup-node@v2.4.1
+        uses: actions/setup-node@v2
       
-      - run:  npm install
+      - run: npm install
 
       - name: Running Tests Production
-      - run:  newman run "https://api.getpostman.com/collections/${{ secrets.COLLECTION_UUID }}?apikey=${{ secrets.API_KEY }}" --environment "https://api.getpostman.com/environments/${{ secrets.PROD_ENV_UUID }}?apikey=${{ secrets.API_KEY }}"
+      - run: newman run "https://api.getpostman.com/collections/${{ secrets.COLLECTION_UUID }}?apikey=${{ secrets.API_KEY }}" --environment "https://api.getpostman.com/environments/${{ secrets.PROD_ENV_UUID }}?apikey=${{ secrets.API_KEY }}"
