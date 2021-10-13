@@ -13,4 +13,4 @@ jobs:
         uses: actions/setup-node@v2.4.1
       
       - name: Install Newman
-      - run:  npm i newman
+      - run:  npm ci newman
