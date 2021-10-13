@@ -11,3 +11,6 @@ jobs:
     
       - name: Setup NodeJs
         uses: actions/setup-node@v2.4.1
+      
+      - name: Install Newman
+      - run:  npm i newman
