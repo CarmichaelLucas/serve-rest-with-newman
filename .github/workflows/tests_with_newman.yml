@@ -1,9 +1,5 @@
 name: Newman CI
-
-on:
-  push:
-    branches:
-      - "main"
+on: push
 
 jobs:
   newman:
@@ -20,5 +16,4 @@ jobs:
       - run:  npm i newman
 
       - name: Running Tests Production
-      - run:  newman run "https://api.getpostman.com/collections/${{ secrets.COLLECTION_UUID }}?apikey=${{ secrets.API_KEY }}" \
-                    --environment "https://api.getpostman.com/environments/${{ secrets.PROD_ENV_UUID }}?apikey=${{ secrets.API_KEY }}"
+      - run:  newman run "https://api.getpostman.com/collections/${{ secrets.COLLECTION_UUID }}?apikey=${{ secrets.API_KEY }}" --environment "https://api.getpostman.com/environments/${{ secrets.PROD_ENV_UUID }}?apikey=${{ secrets.API_KEY }}"
