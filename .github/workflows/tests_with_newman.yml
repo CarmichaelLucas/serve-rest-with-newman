@@ -1,0 +1,24 @@
+name: Newman CI
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  newman:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+    
+      - name: Setup NodeJs
+        uses: actions/setup-node@v2.4.1
+    
+      - name: Install Newman
+      - run:  npm ci
+
+      - name: Running Tests Production
+      - run:  newman run "https://api.getpostman.com/collections/${{ secrets.COLLECTION_UUID }}?apikey=${{ secrets.API_KEY }}" \
+                    --environment "https://api.getpostman.com/environments/${{ secrets.PROD_ENV_UUID }}?apikey=${{ secrets.API_KEY }}"
